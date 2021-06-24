@@ -1,0 +1,22 @@
+.cart-item {
+    display: flex;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-image {
+    width: 180px;
+    height: 180px;
+}
+
+.cart-item-image img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
