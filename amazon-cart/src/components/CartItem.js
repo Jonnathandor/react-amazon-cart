@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartItem.css'
 
-export default function CartItem({ title, stock, image, price, quantity }) {
+export default function CartItem({ title, stock, image, price, quantity, changeItemQuantity, index }) {
     return (
         <div className="cart-item">
             <div className="cart-item-image">
@@ -16,10 +16,15 @@ export default function CartItem({ title, stock, image, price, quantity }) {
                 </div>
                 <div className="item-actions">
                     <div className="item-quantity">
-                        <select value={quantity}>
+                        <select
+                        value={quantity}
+                        onChange={(e)=> {changeItemQuantity(e, index)}}>
                             <option value="1">Qty: 1</option>
                             <option value="2">Qty: 2</option>
                             <option value="3">Qty: 3</option>
+                            <option value="4">Qty: 4</option>
+                            <option value="5">Qty: 5</option>
+                            <option value="6">Qty: 6</option>
                         </select>
                     </div>
                     <div className="item-actions-divider">|</div>
