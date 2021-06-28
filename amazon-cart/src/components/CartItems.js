@@ -11,6 +11,14 @@ export default function CartItems({ items, setCartItems }) {
     setCartItems(newItems);
   }
 
+  const deleteItem = (indexToDelete) => {
+    const filterItems = items.filter((value, index) => {
+      return index !== indexToDelete
+    });
+
+    setCartItems(filterItems);
+  }
+
   return (
       <div className="cart-items">
         <h1>Shopping Cart</h1>
@@ -27,6 +35,7 @@ export default function CartItems({ items, setCartItems }) {
               quantity={item.quantity}
               changeItemQuantity={changeItemQuantity}
               index={index}
+              deleteItem={deleteItem}
               />
             })
           }

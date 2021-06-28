@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartItem.css'
 
-export default function CartItem({ title, stock, image, price, quantity, changeItemQuantity, index }) {
+export default function CartItem({ title, stock, image, price, quantity, changeItemQuantity, index, deleteItem }) {
     return (
         <div className="cart-item">
             <div className="cart-item-image">
@@ -28,7 +28,7 @@ export default function CartItem({ title, stock, image, price, quantity, changeI
                         </select>
                     </div>
                     <div className="item-actions-divider">|</div>
-                    <div className="item-delete">
+                    <div className="item-delete" onClick={deleteItem.bind(this, index)}>
                         Delete
                     </div>
                 </div>
